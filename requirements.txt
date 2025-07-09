@@ -1,0 +1,12 @@
+matplotlib
+multiprocess
+numpy
+pandas
+scipy
+statsmodels
+tabulate
+pathos
+pytest
+scikit-learn
+SST
+scikit-learn
