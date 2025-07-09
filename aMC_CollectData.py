@@ -58,7 +58,7 @@ def collectData(version):
 
 if __name__ == "__main__":
     # Specify version
-    version = "MC_RGMM_2"
+    version = "MC_Efficiency_Sim1"
     collectData(version)
 
     # for i in range(10):
