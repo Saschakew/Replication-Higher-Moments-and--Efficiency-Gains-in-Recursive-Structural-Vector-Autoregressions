@@ -2,8 +2,7 @@ Python/venv/
 Python/.idea/
 Python/__pycache__/
 Python/src/__pycache__/ 
-Python/SVAR/__pycache__/
-MCResults/
+Python/SVAR/__pycache__/ 
 BootstrapIRF/
 
 *.png

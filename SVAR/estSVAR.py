@@ -432,26 +432,8 @@ def SVARest(u, estimator='GMM', options=dict(), prepOptions=dict(), prepared=Fal
                                                                                           Wpara=options['Wpara'],
                                                                                           S_func=options['S_func']))
 
-            if options['Wpara'] == 'Independent':
-                this_grad = lambda b_vec: SVAR.estimatorGMM.gradient_cont(u, b_vec,
-                                                                          Jacobian=options['Jacobian'],
-                                                                          W=SVAR.SVARutilGMM.get_W_opt(u, b=b_vec,
-                                                                                                       restrictions=
-                                                                                                       options[
-                                                                                                           'restrictions'],
-                                                                                                       moments=options[
-                                                                                                           'moments'],
-                                                                                                       Wpara=options[
-                                                                                                           'Wpara'],
-                                                                                                       S_func=options[
-                                                                                                           'S_func']),
-                                                                          restrictions=options['restrictions'],
-                                                                          moments=options['moments'],
-                                                                          moments_powerindex=options[
-                                                                              'moments_powerindex'],
-                                                                          Sdel_func=options['Sdel_func'])
-            else:
-                this_grad = []
+             
+            this_grad = []
 
 
             optim_start = options['bstart']

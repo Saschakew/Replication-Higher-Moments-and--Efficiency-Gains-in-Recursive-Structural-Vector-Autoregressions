@@ -5,7 +5,8 @@ import time
 
 def collectData(version):
     # Specify path to MCResults
-    path = os.path.join("MCResults", version)
+    path = os.path.join("MCResults", version) 
+    print(path)
 
     # Load collected data or create empty Data file
     path_VersionData = os.path.join(path, str(version + ".data"))

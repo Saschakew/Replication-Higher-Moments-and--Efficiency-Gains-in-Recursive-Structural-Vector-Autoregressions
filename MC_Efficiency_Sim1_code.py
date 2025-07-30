@@ -260,7 +260,7 @@ def OneMCIteration(path, jobno):
 
     # SVAR Settings
     N = [5]
-    T = [200, 300, 400,500,600,700,  800,900,1000, 5000]
+    T = [200, 300, 400,500,600,700,  800,900,1000]
 
     # shocks
     mu1, sigma1 = (-0.2, np.power(0.7, 2))

@@ -39,11 +39,11 @@ q10_save = dict()
 rejection_save = dict()
 var_save = dict()
 for estimator in useestimators:
-    b_save[estimator] = np.zeros(10)
-    q90_save[estimator] = np.zeros(10)
-    q10_save[estimator] = np.zeros(10)
-    var_save[estimator] = np.zeros(10)
-    rejection_save[estimator] = np.zeros([9,10])
+    b_save[estimator] = np.zeros(9)
+    q90_save[estimator] = np.zeros(9)
+    q10_save[estimator] = np.zeros(9)
+    var_save[estimator] = np.zeros(9)
+    rejection_save[estimator] = np.zeros([9,9])
 
 
 
@@ -564,13 +564,15 @@ for n in N:
         fig, axs = plt.subplots(1, 3, figsize=(15, 5), tight_layout=True)
         plt.subplots_adjust(left=0.03, right=0.97 ,top=0.95)
         for idx_estimator, estimator in enumerate(estimators[1:]):
-            axs[idx_estimator].plot(T[:-1], b_save['Cholesky'][:-1], color=mycolors[0], label=useestimators_names[0])
-            axs[idx_estimator].fill_between(T[:-1], q10_save['Cholesky'][:-1], q90_save['Cholesky'][:-1],
+            print(T)
+            print( b_save['Cholesky'])
+            axs[idx_estimator].plot(T, b_save['Cholesky'], color=mycolors[0], label=useestimators_names[0])
+            axs[idx_estimator].fill_between(T, q10_save['Cholesky'], q90_save['Cholesky'],
                                             color=mycolors[0], alpha=0.5)
 
-            axs[idx_estimator].plot(T[:-1], b_save[estimator][:-1], color=mycolors[idx_estimator + 1],
+            axs[idx_estimator].plot(T, b_save[estimator], color=mycolors[idx_estimator + 1],
                                     label=useestimators_names[idx_estimator+1])
-            axs[idx_estimator].fill_between(T[:-1], q10_save[estimator][:-1], q90_save[estimator][:-1],
+            axs[idx_estimator].fill_between(T, q10_save[estimator], q90_save[estimator],
                                             color=mycolors[idx_estimator + 1], alpha=0.5)
 
             axs[idx_estimator].set_ylim([3.5, 6.5])
@@ -580,7 +582,7 @@ for n in N:
 
         for idx_estimator, estimator in enumerate(estimators):
             axs[2].axhline(y=var_avar[idx_estimator], color=mycolors[idx_estimator ], linestyle='--')
-            axs[2].plot(T[:-1], var_save[estimator][:-1], color=mycolors[idx_estimator ], label=useestimators_names[idx_estimator])
+            axs[2].plot(T, var_save[estimator], color=mycolors[idx_estimator ], label=useestimators_names[idx_estimator])
             axs[2].set_xlabel('Sample size')
             axs[2].set_title(" Scaled variance ")
             axs[2].legend(loc='upper center')
