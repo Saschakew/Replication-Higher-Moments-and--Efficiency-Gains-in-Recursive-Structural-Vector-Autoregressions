@@ -1,6 +1,10 @@
 # Replication Package: Higher Moments and Efficiency Gains in Recursive Structural Vector Autoregressions
 
-This repository contains the code to replicate the results of the paper "Higher Moments and Efficiency Gains in Recursive Structural Vector Autoregressions" by Sascha A. Keweloh.
+This repository contains the code to replicate the results of the paper "Higher Moments and Efficiency Gains in Recursive Structural Vector Autoregressions".
+
+## Citation
+
+Keweloh, S. A., & Wang, S. (2025). Higher Moments and Efficiency Gains in Recursive Structural Vector Autoregressions. *Oxford Bulletin of Economics and Statistics*. https://doi.org/10.1111/obes.70008
 
 ## Getting Started
 
@@ -35,7 +39,7 @@ The analysis is split into three main scripts:
 
 1.  **Run the Monte Carlo Simulation**
 
-    The `MC_Efficiency_Sim1.py` script runs the Monte Carlo simulations. The results are saved in the `MCResults` directory, which will be created if it doesn't exist.
+    To replicate the Monte Carlo simulation, run `MC_Efficiency_Sim1.py`. This script creates a folder `MCResults/MC_Efficiency_Sim1` where all the results of the individual Monte Carlo runs are saved.
 
     ```sh
     python MC_Efficiency_Sim1.py
@@ -51,7 +55,7 @@ The analysis is split into three main scripts:
 
 3.  **Evaluate Results and Generate Plots**
 
-    Finally, the `aMC_Evaluation_Efficiency.py` script evaluates the collected data and generates the plots presented in the paper.
+    Finally, the `aMC_Evaluation_Efficiency.py` script evaluates the collected data and creates the two figures `MCMeanPlot.pdf` and `MCRejectionPlot.pdf` which are presented in the paper.
 
     ```sh
     python aMC_Evaluation_Efficiency.py
